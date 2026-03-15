@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SKILL_NAME="socratic"
+SKILL_DIR="$(cd "$(dirname "$0")" && pwd)"
+TARGET="$HOME/.claude/skills/$SKILL_NAME"
+
+echo "Installing $SKILL_NAME skill..."
+
+# Create skills directory if needed
+mkdir -p "$HOME/.claude/skills"
+
+# Remove existing link/dir if present
+if [ -L "$TARGET" ] || [ -d "$TARGET" ]; then
+  rm -rf "$TARGET"
+fi
+
+# Symlink repo into skills directory
+ln -s "$SKILL_DIR" "$TARGET"
+
+echo "Linked: $TARGET -> $SKILL_DIR"
+echo ""
+echo "Done. /socratic is now available in Claude Code."
