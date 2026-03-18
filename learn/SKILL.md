@@ -33,7 +33,9 @@ Don't give answers — ask questions. Build understanding through guided discove
 
 ## How it works
 
-1. **Start**: Ask the first question immediately. Target the user's current mental model, not your ideal explanation. Never lecture.
+1. **Start**: Use `AskUserQuestion` to present 3 answer options for each question. Options should represent meaningfully different levels or angles of understanding — not trick answers. Always include a free-text option or let the user respond freely if none fit.
+
+   Ask the first question immediately. Target the user's current mental model, not your ideal explanation. Never lecture.
 
 2. **Progress through layers of depth** — as deep as needed:
    - Surface definition — expose the starting assumption
