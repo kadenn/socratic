@@ -1,11 +1,12 @@
 # Socratic
 
-A portable Claude Code skill for structured thinking. Two modes, one principle: **open at the right moment, close at the right moment.**
+A portable Claude Code skill for structured thinking. One principle: **open at the right moment, close at the right moment.**
 
-## Modes
+## Skills
 
-- **LEARN** — deepen understanding through Socratic questioning (5 levels)
-- **PRODUCE** — turn clear thinking into concrete output (5 steps)
+- **`/socratic`** — adaptive mode, reads your intent and steers accordingly
+- **`/learn`** — deepen understanding through Socratic questioning
+- **`/produce`** — turn clear thinking into concrete output
 
 ## Install
 
@@ -15,27 +16,28 @@ cd socratic
 ./setup
 ```
 
-This creates a symlink in `~/.claude/skills/socratic` — no dependencies needed.
+This creates symlinks for all three skills in `~/.claude/skills/` — no dependencies needed.
 
 ## Usage
 
-In any Claude Code conversation:
-
 ```
-/socratic learn <topic>
-/socratic produce <topic>
+/socratic <topic>     — let the skill read your intent and guide you
+/learn <topic>        — explicit questioning mode
+/produce <topic>      — explicit production mode
 ```
 
 ## How it works
 
-**LEARN mode** asks questions instead of giving answers. It progresses through 5 levels of depth: surface definition → distinction → mechanism → edge cases → application. You advance only when you demonstrate genuine understanding, not keyword matching.
+**`/learn`** asks questions instead of giving answers. It moves through layers of depth — definition, distinction, mechanism, edge cases, application — going as deep as needed. You advance when you demonstrate genuine understanding, not keyword matching.
 
-**PRODUCE mode** closes loops instead of reopening them. It progresses through 5 steps: define output → lock thesis → draft structure → refine → finalize. Each step locks a decision — no going back.
+**`/produce`** closes loops instead of reopening them. It guides you through defining output, locking direction, drafting structure, refining, and finalizing. Each step locks a decision — no going back without a conscious choice.
 
-**Drift detection** — if you start building when you should be learning (or questioning when you should be shipping), the skill names it and asks if you want to switch modes consciously.
+**`/socratic`** reads the situation. If you're exploring, it asks questions. If you're ready to ship, it helps you converge. Drift gets named, not enforced.
+
+**Drift detection** — if you start building when you should be learning (or questioning when you should be shipping), the skill names it and lets you decide.
 
 ## Uninstall
 
 ```bash
-rm ~/.claude/skills/socratic
+rm ~/.claude/skills/socratic ~/.claude/skills/learn ~/.claude/skills/produce
 ```

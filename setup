@@ -1,23 +1,31 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SKILL_NAME="socratic"
-SKILL_DIR="$(cd "$(dirname "$0")" && pwd)"
-TARGET="$HOME/.claude/skills/$SKILL_NAME"
+REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+SKILLS_DIR="$HOME/.claude/skills"
 
-echo "Installing $SKILL_NAME skill..."
+SKILLS=("socratic" "learn" "produce")
 
-# Create skills directory if needed
-mkdir -p "$HOME/.claude/skills"
+echo "Installing Socratic skills..."
 
-# Remove existing link/dir if present
-if [ -L "$TARGET" ] || [ -d "$TARGET" ]; then
-  rm -rf "$TARGET"
-fi
+mkdir -p "$SKILLS_DIR"
 
-# Symlink repo into skills directory
-ln -s "$SKILL_DIR" "$TARGET"
+for SKILL in "${SKILLS[@]}"; do
+  TARGET="$SKILLS_DIR/$SKILL"
+  SOURCE="$REPO_DIR/$SKILL"
 
-echo "Linked: $TARGET -> $SKILL_DIR"
+  if [ ! -d "$SOURCE" ]; then
+    echo "Warning: $SOURCE not found, skipping."
+    continue
+  fi
+
+  if [ -L "$TARGET" ] || [ -d "$TARGET" ]; then
+    rm -rf "$TARGET"
+  fi
+
+  ln -s "$SOURCE" "$TARGET"
+  echo "Linked: $TARGET -> $SOURCE"
+done
+
 echo ""
-echo "Done. /socratic is now available in Claude Code."
+echo "Done. /socratic, /learn, and /produce are now available in Claude Code."
