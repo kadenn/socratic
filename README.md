@@ -1,3 +1,9 @@
+> [!IMPORTANT]
+> This project has moved to [kadenn/skills](https://github.com/kadenn/skills).
+> This repository is preserved as a read-only legacy snapshot. Use the monorepo for future updates, issues, and contributions.
+>
+> Install the maintained skill with `gh skill install kadenn/skills socratic`.
+
 # Socratic
 
 A portable Claude Code skill for structured thinking. One principle: **open at the right moment, close at the right moment.**
