@@ -1,8 +1,16 @@
-> [!IMPORTANT]
-> This project has moved to [kadenn/skills](https://github.com/kadenn/skills).
-> This repository is preserved as a read-only legacy snapshot. Use the monorepo for future updates, issues, and contributions.
->
-> Install the maintained skill with `gh skill install kadenn/skills socratic`.
+<h1 align="center">This repository has moved</h1>
+
+<h2 align="center"><a href="https://github.com/kadenn/skills">Continue at kadenn/skills</a></h2>
+
+<p align="center">
+  <a href="https://github.com/kadenn/skills"><img alt="Continue to kadenn/skills" src="https://img.shields.io/badge/CONTINUE%20TO-kadenn%2Fskills-2ea44f?style=for-the-badge&amp;logo=github"></a>
+</p>
+
+<p align="center"><strong>This repository is a read-only legacy snapshot.</strong></p>
+<p align="center">Use the monorepo for future updates, issues, and contributions.</p>
+<p align="center"><code>gh skill install kadenn/skills socratic</code></p>
+
+---
 
 # Socratic
 
